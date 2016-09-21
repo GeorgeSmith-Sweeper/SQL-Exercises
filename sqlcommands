@@ -1,0 +1,16 @@
+-- Car
+SELECT name FROM movies WHERE name LIKE "Car %"
+-- Birthyear
+SELECT name FROM movies WHERE year = 1989;
+-- 1982
+SELECT COUNT(*) FROM movies WHERE year = 1982;
+-- Stacktors
+SELECT id, first_name, last_name, gender FROM actors WHERE last_name LIKE "Stack%"
+-- FirstName
+SELECT COUNT(first_name), first_name FROM actors GROUP BY first_name ORDER BY COUNT(first_name) DESC LIMIT 10;
+-- LastName
+SELECT COUNT(last_name), last_name FROM actors GROUP BY last_name ORDER BY COUNT(last_name) DESC LIMIT 10;
+-- Prolific
+
+
+
