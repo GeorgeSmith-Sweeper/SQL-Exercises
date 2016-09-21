@@ -11,6 +11,16 @@ SELECT COUNT(first_name), first_name FROM actors GROUP BY first_name ORDER BY CO
 -- LastName
 SELECT COUNT(last_name), last_name FROM actors GROUP BY last_name ORDER BY COUNT(last_name) DESC LIMIT 10;
 -- Prolific
-
-
-
+SELECT first_name, last_name, COUNT(*) AS role_count
+FROM actors
+INNER JOIN roles
+ON actors.id = roles.actor_id
+GROUP BY roles.actor_id
+ORDER BY role_count
+DESC LIMIT 100;
+-- Bottom of the Barrel
+SELECT genre, COUNT(*) AS genre_count
+FROM movies_genres
+GROUP BY genre
+ORDER BY genre_count
+ASC LIMIT 10;
